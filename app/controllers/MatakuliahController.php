@@ -38,6 +38,19 @@ class MatakuliahController {
         }
         require '../app/views/matakuliah/edit.php';
     }
+    public function update($id) {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+          
+            $this->matakuliahmodel->update($_POST);
+            header('Location: app/views/matakuliah/index');
+            exit;
+        }
+        $matakuliah = $this->matakuliahmodel->getById($id);
+        if (!$matakuliah) {
+            header('Location: app/views/matakuliah/index'); // Atau tampilkan pesan error
+            exit;
+        }
+    }
     public function delete($id) {
         $matakuliah = new Matakuliah();
 

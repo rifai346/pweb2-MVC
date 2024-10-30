@@ -1,10 +1,10 @@
 <?php
 
 class Database {
-    private $host = 'localhost'; // Ganti dengan host database Anda
-    private $db_name = 'manajemen-nilai-mahasiswa'; // Ganti dengan nama database Anda
-    private $username = 'root'; // Ganti dengan username database Anda
-    private $password = ''; // Ganti dengan password database Anda
+    private $host = 'mdi.my.id'; // Ganti dengan host database Anda
+    private $db_name = 'basdeat2_klp6'; // Ganti dengan nama database Anda
+    private $username = 'basdeat2_usr6'; // Ganti dengan username database Anda
+    private $password = 'pOS(v?67S2{KRT&fub'; // Ganti dengan password database Anda
     private $conn;
     private $stmt;
 
