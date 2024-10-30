@@ -1,6 +1,6 @@
 <?php
 
-require_once '../config/Database.php';
+require_once __DIR__ .'../../config/Database.php';
 class Matakuliah {
     private $db;
     
@@ -13,14 +13,14 @@ class Matakuliah {
     public function getAll() {
         $query = "SELECT * FROM data_matakuliah";
         $this->db->query($query);
-        return $this->db->query($query);
+        return $this->db->resultSet();
     }
 
     public function getById($id) {
         $query = "SELECT * FROM data_matakuliah WHERE id_matakuliah = :id_matakuliah";
         $this->db->query($query);
         $this->db->bind(':id_matakuliah', $id);
-        return $this->db->stmt->fetch(PDO::FETCH_ASSOC); // Mengembalikan satu baris data
+        return $this->db->single();
     }
 
     public function create($data) {
@@ -43,9 +43,9 @@ class Matakuliah {
     }
 
     public function delete($id) {
-        $query = "DELETE FROM data_matakuliah WHERE id_matakuliah = :id_matakuliah";
+        $query = "DELETE FROM data_matakuliah WHERE id_matakuliah = :id";
         $this->db->query($query);
-        $this->db->bind(':id_matakuliah', $id);
+        $this->db->bind(':id', $id);
         return $this->db->execute();
     }
 }

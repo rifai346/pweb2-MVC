@@ -1,33 +1,51 @@
 <?php
+// Include controller yang diperlukan
 require 'app/controllers/MatakuliahController.php';
 
 $controller = new MatakuliahController();
 
+// Parsing URI
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-$parts = explode('/', $uri);
+$parts = explode('/', trim($uri, '/'));
 
-if ($parts[1] === 'matakuliah') {
-    if (isset($parts[2])) {
-        switch ($parts[2]) {
-            case 'create':
-                $controller->create();
-                break;
-            case 'edit':
-                $controller->edit($parts[3]); // Mengambil ID dari URL
-                break;
-            case 'delete':
-                $controller->delete($parts[3]); // Mengambil ID dari URL
-                break;
-            default:
-                $controller->index();
-                break;
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+// Logika Routing
+if ($parts[0] === 'manajemen-nilai-mahasiswa') {
+    if (isset($parts[1]) && $parts[1] === 'matakuliah') {
+        if (isset($parts[2])) {
+            switch ($parts[2]) {
+                case 'create':
+                    $controller->create();
+                    break;
+                case 'edit':
+                    if (isset($parts[3]) && is_numeric($parts[3])) {
+                        $controller->edit($parts[3]); // ID harus berupa angka
+                    } else {
+                        echo "ID tidak valid untuk edit.";
+                    }
+                    break;
+                case 'delete':
+                    if (isset($parts[3]) && is_numeric($parts[3])) {
+                        $controller->delete($parts[3]); // ID harus berupa angka
+                    } else {
+                        echo "ID tidak valid untuk delete.";
+                    }
+                    break;
+                default:
+                    $controller->index();
+                    break;
+            }
+        } else {
+            $controller->index(); // Rute ke halaman index
         }
     } else {
-        $controller->index();
+        http_response_code(404);
+        echo "Halaman tidak ditemukan.";
     }
 } else {
-    // Halaman tidak ditemukan
     http_response_code(404);
     echo "Halaman tidak ditemukan.";
 }
-?>

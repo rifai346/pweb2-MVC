@@ -2,6 +2,11 @@ Options +FollowSymLinks
 RewriteEngine On
 
 RewriteBase /manajemen-nilai-mahasiswa/
+
+# Redirect specific view folder to its index.php
+RewriteRule ^views/matakuliah/?$ app/views/matakuliah/index.php [L]
+
+# Existing rule
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ public/index.php [L]

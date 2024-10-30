@@ -1,5 +1,5 @@
 <?php
-require_once '../models/Matakuliah.php';
+require_once '../app/models/Matakuliah.php';
 
 $matakuliahmodel = new Matakuliah();
 $matakuliahs = $matakuliahmodel->getAll();
@@ -11,7 +11,7 @@ $matakuliahs = $matakuliahmodel->getAll();
 </head>
 <body>
     <h1>Daftar Matakuliah</h1>
-    <a href="views/matakuliah/create">Tambah Matakuliah</a>
+    <a href="/manajemen-nilai-mahasiswa/matakuliah/create">Tambah Matakuliah</a>
     <table border="1">
         <tr>
             <th>ID</th>
@@ -28,8 +28,8 @@ $matakuliahs = $matakuliahmodel->getAll();
         <td><?php echo $matakuliah['nama_matakuliah']; ?></td>
         <td><?php echo $matakuliah['jumlah_sks']; ?></td>
         <td>
-            <a href="/matakuliah/edit/<?php echo $matakuliah['id_matakuliah']; ?>">Edit</a>
-            <a href="/matakuliah/delete/<?php echo $matakuliah['id_matakuliah']; ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus matakuliah ini?');">Delete</a>
+            <a href="/manajemen-nilai-mahasiswa/matakuliah/edit/<?php echo $matakuliah['id_matakuliah']; ?>">Edit</a>
+            <a href="/manajemen-nilai-mahasiswa/matakuliah/delete/<?php echo $matakuliah['id_matakuliah']; ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus matakuliah ini?');">Delete</a>
         </td>
     </tr>
     <?php endforeach; ?>
