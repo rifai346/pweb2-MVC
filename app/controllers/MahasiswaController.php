@@ -1,6 +1,6 @@
 <?php
 // app/controllers/UserController.php
-require_once '../app/models/data-mahasiswa.php';
+require_once '../../models/data-mahasiswa.php';
 
 class UserController {
     private $userModel;
@@ -56,7 +56,7 @@ class UserController {
             $mahasiswa->delete($nim);
             
             // Redirect ke halaman index setelah penghapusan berhasil
-            header("Location: /manajemen_nilai_mahasiswa/mahasiswa/index");
+            header("Location: /manajemen-nilai-mahasiswa/mahasiswa/index");
             exit;
         } else {
             echo "ID tidak valid untuk delete.";

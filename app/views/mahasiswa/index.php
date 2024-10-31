@@ -13,7 +13,7 @@ $users = $userModel->getAllMahasiswa();
     <title>Dashboard - Data Statistik</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/manajemen_nilai_mahasiswa/public/startbootstrap-simple-sidebar-gh-pages/css/styles.css" rel="stylesheet" />
+    <link href="/manajemen-nilai-mahasiswa/public/startbootstrap-simple-sidebar-gh-pages/css/styles.css" rel="stylesheet" />
 </head>
 <body>
     <div class="d-flex" id="wrapper">
@@ -21,7 +21,7 @@ $users = $userModel->getAllMahasiswa();
         <div class="border-end bg-white" id="sidebar-wrapper">
             <div class="sidebar-heading border-bottom bg-light">Dashboard</div>
             <div class="list-group list-group-flush">
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/manajemen_nilai_mahasiswa/dashboard">Dashboard</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/manajemen-nilai-mahasiswa/dashboard">Dashboard</a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Data Mahasiswa</a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Data Matakuliah</a>
             </div>
@@ -60,8 +60,8 @@ $users = $userModel->getAllMahasiswa();
                     <td><?php echo $mahasiswa['nama'] ?></td>
                     <td><?php echo $mahasiswa['email'] ?></td>
                     <td>
-                        <a href="/manajemen_nilai_mahasiswa/mahasiswa/edit/<?php echo $mahasiswa['nim'] ?>">Edit</a>
-                        <a href="/manajemen_nilai_mahasiswa/mahasiswa/delete/<?php echo $mahasiswa['nim']; ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus mahasiswa ini?');">Delete</a>
+                        <a href="/manajemen-nilai-mahasiswa/mahasiswa/edit/<?php echo $mahasiswa['nim'] ?>">Edit</a>
+                        <a href="/manajemen-nilai-mahasiswa/mahasiswa/delete/<?php echo $mahasiswa['nim']; ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus mahasiswa ini?');">Delete</a>
                     </td>
                 </tr>
                 <?php endforeach; ?>
