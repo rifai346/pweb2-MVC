@@ -1,6 +1,7 @@
 <?php
 // Include controller yang diperlukan
 require 'app/controllers/MatakuliahController.php';
+require 'app/controllers/MahasiswaController.php';
 
 $controller = new MatakuliahController();
 
@@ -16,6 +17,42 @@ error_reporting(E_ALL);
 if ($parts[0] === 'manajemen-nilai-mahasiswa') {
     if (isset($parts[1])) {
         switch ($parts[1]) {
+            case 'mahasiswa':
+                if (isset($parts[2])) {
+                    switch ($parts[2]) {
+                        case 'create':
+                            $controller->create();
+                            break;
+                        case 'edit':
+                            if (isset($parts[3]) && is_numeric($parts[3])) {
+                                $controller->edit($parts[3]);
+                            } else {
+                                echo "ID tidak valid untuk edit.";
+                            }
+                            break;
+                        case 'update':
+                            if (isset($parts[3]) && is_numeric($parts[3])) {
+                                $controller->update($parts[3]);
+                            } else {
+                                echo "ID tidak valid untuk update.";
+                            }
+                            break;
+                        case 'delete':
+                            if (isset($parts[3]) && is_numeric($parts[3])) {
+                                $controller->delete($parts[3]);
+                            } else {
+                                echo "ID tidak valid untuk delete.";
+                            }
+                            break;
+                        default:
+                            $controller->index();
+                            break;
+                    }
+                } else {
+                    $controller->index();
+                }
+                break;
+
             case 'matakuliah':
                 if (isset($parts[2])) {
                     switch ($parts[2]) {
@@ -33,7 +70,7 @@ if ($parts[0] === 'manajemen-nilai-mahasiswa') {
                             if (isset($parts[3]) && is_numeric($parts[3])) {
                                 $controller->update($parts[3]);
                             } else {
-                                echo "ID tidak valid untuk edit.";
+                                echo "ID tidak valid untuk update.";
                             }
                             break;
                         case 'delete':

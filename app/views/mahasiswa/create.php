@@ -10,21 +10,21 @@
 <body>
     <div class="container mt-5">
         <h1 class="mb-4">Tambah Matakuliah</h1>
-        <form action="../matakuliah/create" method="POST" class="form">
-            <div class="form-group">
-                <label for="kode_matakuliah">Kode:</label>
-                <input type="number" class="form-control" id="kode_matakuliah" name="kode_matakuliah" required>
+        <form action="../mahasiswa/create" method="POST" class="form">
+        <div class="form-group">
+                <label for="nim">nim:</label>
+                <input type="number" class="form-control" id="nim" name="nim" required>
             </div>
             <div class="form-group">
-                <label for="nama_matakuliah">Nama Matakuliah:</label>
-                <input type="text" class="form-control" id="nama_matakuliah" name="nama_matakuliah" required>
+                <label for="nama">Nama Mahasiswa:</label>
+                <input type="text" class="form-control" id="nama" name="nama" required>
             </div>
             <div class="form-group">
-                <label for="jumlah_sks">SKS:</label>
-                <input type="number" class="form-control" id="jumlah_sks" name="jumlah_sks" required>
+                <label for="email">email:</label>
+                <input type="text" class="form-control" id="email" name="email" required>
             </div>
             <button type="submit" class="btn btn-primary">Simpan</button>
-            <a href="/matakuliah" class="btn btn-secondary ml-2">Kembali ke Daftar Matakuliah</a>
+            <a href="index.php" class="btn btn-secondary ml-2">Kembali ke Daftar Matakuliah</a>
         </form>
     </div>
 
