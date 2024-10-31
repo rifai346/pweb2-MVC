@@ -1,6 +1,6 @@
 <?php
 // app/controllers/UserController.php
-require_once '../../models/data-mahasiswa.php';
+require_once '../app/models/data-mahasiswa.php';
 
 class UserController {
     private $userModel;

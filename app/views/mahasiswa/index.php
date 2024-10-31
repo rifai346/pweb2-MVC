@@ -38,8 +38,8 @@ $users = $userModel->getAllMahasiswa();
 
             <!-- Page content -->
             <div class="container mt-5">
-        <h1 class="mb-4">Daftar Matakuliah</h1>
-        <a href="/manajemen_nilai_mahasiswa/mahasiswa/create" class="btn btn-primary mb-3">Tambah mahasiswa</a>
+        <h1 class="mb-4">Daftar Mahasiswa</h1>
+        <a href="/manajemen-nilai-mahasiswa/mahasiswa/create" class="btn btn-primary mb-3">Tambah mahasiswa</a>
         <table class="table table-bordered table-striped">
             <thead class="table-dark">
                 <tr>
