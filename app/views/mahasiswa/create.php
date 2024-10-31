@@ -9,8 +9,8 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h1 class="mb-4">Tambah Matakuliah</h1>
-        <form action="../mahasiswa/create" method="POST" class="form">
+        <h1 class="mb-4">Tambah Mahasiswa</h1>
+        <form action="/manajemen-nilai-mahasiswa/app/views/mahasiswa" method="POST" class="form">
         <div class="form-group">
                 <label for="nim">nim:</label>
                 <input type="number" class="form-control" id="nim" name="nim" required>
@@ -21,7 +21,7 @@
             </div>
             <div class="form-group">
                 <label for="email">email:</label>
-                <input type="text" class="form-control" id="email" name="email" required>
+                <input type="email" class="form-control" id="email" name="email" placeholder="" required>
             </div>
             <button type="submit" class="btn btn-primary">Simpan</button>
             <a href="index.php" class="btn btn-secondary ml-2">Kembali ke Daftar Matakuliah</a>

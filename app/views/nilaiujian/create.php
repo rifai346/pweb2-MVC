@@ -11,34 +11,31 @@
 <body>
     <div class="container mt-5">
         <h1 class="mb-4">Tambah Nilai Ujian Matakuliah</h1>
-        <form action="../nilaiujian" method="POST" class="form">
+        <form action="/manajemen-nilai-mahasiswa/app/views/nilaiujian/create" method="POST" class="form">
             <div class="form-group">
                 <label for="nilai_matkul">NILAI MATKUL:</label>
-                <input type="text" class="form-control" id="nilai_matkul" name="nilai_matkul" required>
+                <input type="text" class="form-control" id="nilai_matkul" name="nilai_matkul" placeholder="0-100" required>
             </div>
-            <form name="form1" id="form1" action="/action_page.php">
                 ID MATAKULIAH: 
             <br>
-                <select class="form-select" aria-label="Default select example">
+                <select class="form-select" name="id_matakuliah" aria-label="Default select example">
                     <option selected>Silahkan Pilih ID Matakuliah</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    <?php foreach ($matakuliahmodel as $key => $value) : ?>
+                        <option value="<?= $value['id_matakuliah']?>"><?=$value['id_matakuliah']?></option>
+                    <?php endforeach ?>
                 </select>
-            <br>
-            <form name="form1" id="form1" action="/action_page.php">
-                NIM: 
                 <br>
-                <select class="form-select" aria-label="Default select example">
+                NIM: 
+            <br>
+                <select class="form-select" name="nim" aria-label="Default select example">
                     <option selected>Silahkan Pilih NIM Mahasiswa</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    <?php foreach ($mahasiswa as $key => $value) : ?>
+                        <option value="<?= $value['nim']?>"><?=$value['nim']?></option>
+                    <?php endforeach ?>
                 </select>
                 <br><br>
             <button type="submit" class="btn btn-primary">Simpan</button>
             <a href="../nilaiujian" class="btn btn-secondary ml-2">Kembali ke Daftar Nilai Ujian Matakuliah</a>
-        </form>
     </div>
 
     <!-- Bootstrap JS and dependencies -->
@@ -48,3 +45,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
+
+
+

@@ -14,10 +14,10 @@
         <div class="border-end bg-white" id="sidebar-wrapper">
             <div class="sidebar-heading border-bottom bg-light">Dashboard</div>
             <div class="list-group list-group-flush">
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="app/views/dashboard/index.php">Dashboard</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Data Mahasiswa</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="app/views/nilaiujian/index.php">Data Matakuliah</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="app/views/nilaiujian/index.php">Data Matakuliah</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="../dashboard">Dashboard</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="../mahasiswa">Data Mahasiswa</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="../matakuliah">Data Matakuliah</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="../nilaiujian">Data Nilai Ujian</a>
             </div>
         </div>
 

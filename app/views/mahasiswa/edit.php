@@ -10,7 +10,7 @@
 <body>
     <div class="container mt-5">
         <h1 class="mb-4">Edit Mahasiswa</h1>
-        <form action="/manajemen_nilai_mahasiswa/mahasiswa/update/<?php echo $mahasiswa['nim']; ?>" method="POST" class="form">
+        <form action="/manajemen-nilai-mahasiswa/app/views/mahasiswa/update/<?php echo $mahasiswa['nim']; ?>" method="POST" class="form">
             <div class="form-group">
                 <label for="nim">nim:</label>
                 <input type="text" class="form-control" id="nim" name="nim" value="<?php echo $mahasiswa['nim']; ?>" readonly>
@@ -21,11 +21,11 @@
             </div>
             <div class="form-group">
                 <label for="email">email:</label>
-                <input type="text   " class="form-control" id="email" name="email" value="<?php echo $mahasiswa['email']; ?>" required>
+                <input type="text" class="form-control" id="email" name="email" value="<?php echo $mahasiswa['email']; ?>" required>
             </div>
             <input type="hidden" name="nim" value="<?php echo $mahasiswa['nim']; ?>">
             <button type="submit" class="btn btn-primary">Update</button>
-            <a href="/manajemen_nilai_mahasiswa/mahasiswa" class="btn btn-secondary ml-2">Kembali ke Daftar Matakuliah</a>
+            <a href="/manajemen-nilai-mahasiswa/app/views/mahasiswa" class="btn btn-secondary ml-2">Kembali ke Daftar Matakuliah</a>
         </form>
     </div>
 

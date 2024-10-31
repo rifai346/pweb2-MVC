@@ -1,26 +1,33 @@
 <?php
 
 require_once '../app/models/NilaiUjianModel.php';
+require_once '../app/models/data-mahasiswa.php';
+require_once '../app/models/Matakuliah.php';
 
 class nilaiController {
     private $nilaimodel;
+    private $usermodel;
+    private $matakuliahmodel;
 
     public function __construct() {
         $this->nilaimodel = new nilaiUjian();
+        $this->usermodel = new Mahasiswa();
+        $this->matakuliahmodel = new Matakuliah();
     }
-
     
     public function index() {
         $nilaiujians = $this->nilaimodel->getAllNilai();
         require '../app/views/nilaiujian/index.php';
     }
-    
 
     public function create() {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $this->nilaimodel->create($_POST);
             header('Location: app/views/nilaiujian/index');
         }
+        $mahasiswa = $this->usermodel->getAllMahasiswa();
+        $matakuliahmodel = $this->matakuliahmodel->getAll();
+        
         require '../app/views/nilaiujian/create.php';
     }
 
@@ -42,7 +49,7 @@ class nilaiController {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           
             $this->nilaimodel->update($_POST);
-            header('Location: app/views/nilaiujian/index');
+            header('Location: /manajemen-nilai-mahasiswa/app/views/nilaiujian');
             exit;
         }
         $nilaiujian = $this->nilaimodel->getById($id);

@@ -10,7 +10,7 @@
 <body>
     <div class="container mt-5">
         <h1 class="mb-4">Edit Matakuliah</h1>
-        <form action="/manajemen-nilai-mahasiswa/matakuliah/update/<?php echo $matakuliah['id_matakuliah']; ?>" method="POST" class="form">
+        <form action="/manajemen-nilai-mahasiswa/app/views/matakuliah/update/<?php echo $matakuliah['id_matakuliah']; ?>" method="POST" class="form">
             <div class="form-group">
                 <label for="kode_matakuliah">Kode Matakuliah:</label>
                 <input type="text" class="form-control" id="kode_matakuliah" name="kode_matakuliah" value="<?php echo $matakuliah['kode_matakuliah']; ?>" required>
@@ -25,7 +25,7 @@
             </div>
             <input type="hidden" name="id_matakuliah" value="<?php echo $matakuliah['id_matakuliah']; ?>">
             <button type="submit" class="btn btn-primary">Update</button>
-            <a href="/manajemen-nilai-mahasiswa/matakuliah" class="btn btn-secondary ml-2">Kembali ke Daftar Matakuliah</a>
+            <a href="/manajemen-nilai-mahasiswa/app/views/matakuliah" class="btn btn-secondary ml-2">Kembali ke Daftar Matakuliah</a>
         </form>
     </div>
 

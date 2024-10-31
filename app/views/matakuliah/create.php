@@ -10,7 +10,7 @@
 <body>
     <div class="container mt-5">
         <h1 class="mb-4">Tambah Matakuliah</h1>
-        <form action="../matakuliah/create" method="POST" class="form">
+        <form action="/manajemen-nilai-mahasiswa/app/views/matakuliah" method="POST" class="form">
             <div class="form-group">
                 <label for="kode_matakuliah">Kode:</label>
                 <input type="number" class="form-control" id="kode_matakuliah" name="kode_matakuliah" required>
@@ -24,7 +24,7 @@
                 <input type="number" class="form-control" id="jumlah_sks" name="jumlah_sks" required>
             </div>
             <button type="submit" class="btn btn-primary">Simpan</button>
-            <a href="/matakuliah" class="btn btn-secondary ml-2">Kembali ke Daftar Matakuliah</a>
+            <a href="/manajemen-nilai-mahasiswa/app/views/matakuliah" class="btn btn-secondary ml-2">Kembali ke Daftar Matakuliah</a>
         </form>
     </div>
 
