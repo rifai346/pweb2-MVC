@@ -1,5 +1,5 @@
 <?php
-require_once '../../models/Matakuliah.php';
+require_once __DIR__ .'/../../models/Matakuliah.php';
 
 $matakuliahmodel = new Matakuliah();
 $matakuliahs = $matakuliahmodel->getAll();

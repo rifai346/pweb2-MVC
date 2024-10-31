@@ -25,19 +25,15 @@ if ($parts[0] === 'manajemen-nilai-mahasiswa') {
                         case 'edit':
                             if (isset($parts[3]) && is_numeric($parts[3])) {
                                 $controller->edit($parts[3]);
-                                print_r($parts);
                             } else {
                                 echo "ID tidak valid untuk edit.";
-                                print_r($parts[3]);
                             }
                             break;
                         case 'update':
                             if (isset($parts[3]) && is_numeric($parts[3])) {
                                 $controller->update($parts[3]);
-                                print_r($parts);
                             } else {
                                 echo "ID tidak valid untuk edit.";
-                                print_r($parts[3]);
                             }
                             break;
                         case 'delete':
@@ -59,11 +55,6 @@ if ($parts[0] === 'manajemen-nilai-mahasiswa') {
             case 'dashboard':
                 // Rute untuk mengakses dashboard
                 require 'app/views/dashboard/index.php';
-                break;
-
-            case 'matakuliah':
-                // Rute untuk mengakses data matakuliah
-                require 'app/views/matakuliah/index.php';
                 break;
 
             default:
