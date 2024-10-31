@@ -21,9 +21,10 @@ $users = $userModel->getAllMahasiswa();
         <div class="border-end bg-white" id="sidebar-wrapper">
             <div class="sidebar-heading border-bottom bg-light">Dashboard</div>
             <div class="list-group list-group-flush">
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/manajemen-nilai-mahasiswa/dashboard">Dashboard</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Data Mahasiswa</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Data Matakuliah</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/manajemen-nilai-mahasiswa/dashboard">Dashboard</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/manajemen-nilai-mahasiswa/mahasiswa">Data Mahasiswa</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/manajemen-nilai-mahasiswa/matakuliah">Data Matakuliah</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="">Data Nilai</a>
             </div>
         </div>
 
@@ -60,8 +61,8 @@ $users = $userModel->getAllMahasiswa();
                     <td><?php echo $mahasiswa['nama'] ?></td>
                     <td><?php echo $mahasiswa['email'] ?></td>
                     <td>
-                        <a href="/manajemen-nilai-mahasiswa/mahasiswa/edit/<?php echo $mahasiswa['nim'] ?>">Edit</a>
-                        <a href="/manajemen-nilai-mahasiswa/mahasiswa/delete/<?php echo $mahasiswa['nim']; ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus mahasiswa ini?');">Delete</a>
+                        <a href="/manajemen-nilai-mahasiswa/mahasiswa/edit/<?php echo $mahasiswa['nim'] ?>" class="btn btn-sm btn-warning">Edit</a>
+                        <a href="/manajemen-nilai-mahasiswa/mahasiswa/delete/<?php echo $mahasiswa['nim']; ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus mahasiswa ini?');">Delete</a>
                     </td>
                 </tr>
                 <?php endforeach; ?>

@@ -17,6 +17,7 @@
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/manajemen-nilai-mahasiswa/dashboard">Dashboard</a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/manajemen-nilai-mahasiswa/mahasiswa">Data Mahasiswa</a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/manajemen-nilai-mahasiswa/matakuliah">Data Matakuliah</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="">Data Nilai</a>
             </div>
         </div>
 
@@ -33,7 +34,7 @@
             <div class="container-fluid">
                 <h1 class="mt-4">Dashboard</h1>
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="card text-white bg-primary mb-3">
                             <div class="card-header">Total Mahasiswa</div>
                             <div class="card-body">
@@ -55,7 +56,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="card text-white bg-success mb-3">
                             <div class="card-header">Total Matakuliah</div>
                             <div class="card-body">
@@ -73,6 +74,28 @@
                                     ?>
                                 </h5>
                                 <p class="card-text">Jumlah seluruh mata kuliah yang tersedia</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card text-white bg-danger mb-3">
+                            <div class="card-header">Total Nilai Mata Kuliah</div>
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <?php
+                                    // Ambil jumlah matakuliah dari database
+                                    require_once __DIR__.'/../../config/database.php';
+
+                                    $db = new Database();
+                                    $conn = $db->connect();
+
+                                    $db->query("SELECT COUNT(*) as total_nilai FROM data_nilai_ujian");
+                                    $result = $db->single();
+                                    echo $result['total_nilai'];
+                                    ?>
+                                </h5>
+                                <p class="card-text">Jumlah seluruh nilai mata kuliah yang tersedia</p>
                             </div>
                         </div>
                     </div>

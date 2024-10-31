@@ -2,9 +2,12 @@
 // Include controller yang diperlukan
 require 'app/controllers/MatakuliahController.php';
 require 'app/controllers/MahasiswaController.php';
+require 'app/controllers/NilaiUjianController.php';
 
 $controller = new MatakuliahController();
 $controller2 =new UserController(); 
+$controller3 =new nilaiController(); 
+
 
 // Parsing URI
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
@@ -89,6 +92,43 @@ if ($parts[0] === 'manajemen-nilai-mahasiswa') {
                     $controller->index();
                 }
                 break;
+
+                case 'nilaiujian':
+                    if (isset($parts[3])) {
+                        switch ($parts[3]) {
+                            case 'create':
+                                $controller3->create();
+                                break;
+                            case 'edit':
+                                if (isset($parts[3]) && is_numeric($parts[3])) {
+                                    $controller3->edit($parts[3]);
+                                } else {
+                                    echo "ID tidak valid untuk edit.";
+                                }
+                                break;
+                            case 'update':
+                                if (isset($parts[3]) && is_numeric($parts[3])) {
+                                    $controller3->update($parts[3]);
+                                } else {
+                                    echo "ID tidak valid untuk update.";
+                                }
+                                break;
+                            case 'delete':
+                                if (isset($parts[3]) && is_numeric($parts[3])) {
+                                    $controller3->delete($parts[3]);
+                                } else {
+                                    echo "ID tidak valid untuk delete.";
+                                }
+                                break;
+                            default:
+                                $controller3->index();
+                                break;
+                        }
+                    } else {
+                        $controller3->index();
+                    }
+                    break;
+    
 
             case 'dashboard':
                 // Rute untuk mengakses dashboard
