@@ -21,6 +21,10 @@ class nilaiController {
             $this->nilaimodel->create($_POST);
             header('Location: app/views/nilaiujian/index');
         }
+
+        $matakuliahList = $this->nilaimodel->getAllMatakuliah();
+        $mahasiswaList = $this->nilaimodel->getAllMahasiswa();
+
         require '../app/views/nilaiujian/create.php';
     }
 
@@ -28,7 +32,7 @@ class nilaiController {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           
             $this->nilaimodel->update($_POST);
-            header('Location: app/views/nilaiujian/index');
+            header('Location: ../nilaiujian/index');
             exit;
         }
         $nilaiujian = $this->nilaimodel->getById($id);
@@ -36,18 +40,22 @@ class nilaiController {
             header('Location: app/views/nilaiujian/index'); // Atau tampilkan pesan error
             exit;
         }
+
+        $matakuliahList = $this->nilaimodel->getAllMatakuliah();
+        $mahasiswaList = $this->nilaimodel->getAllMahasiswa();
+
         require '../app/views/nilaiujian/edit.php';
     }
     public function update($id) {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           
             $this->nilaimodel->update($_POST);
-            header('Location: app/views/nilaiujian/index');
+            header('Location: ../index');
             exit;
         }
         $nilaiujian = $this->nilaimodel->getById($id);
         if (!$nilaiujian) {
-            header('Location: app/views/nilaiujian/index'); // Atau tampilkan pesan error
+            header('Location: ../index'); // Atau tampilkan pesan error
             exit;
         }
     }
@@ -59,7 +67,7 @@ class nilaiController {
             $nilaiujian->delete($id);
             
             // Redirect ke halaman index setelah penghapusan berhasil
-            header("Location: ../nilaiujian/index");
+            header("Location: ../index");
             exit;
         } else {
             echo "ID tidak valid untuk delete.";

@@ -16,6 +16,18 @@ class nilaiUjian {
         return $this->db->resultSet();
     }
 
+    public function getAllMatakuliah() {
+        $query = "SELECT id_matakuliah FROM data_matakuliah";
+        $this->db->query($query);
+        return $this->db->resultSet();
+    }
+    
+    public function getAllMahasiswa() {
+        $query = "SELECT nim FROM data_mahasiswa";
+        $this->db->query($query);
+        return $this->db->resultSet();
+    }
+
     public function getById($id) {
         $query = "SELECT * FROM data_nilai_ujian WHERE id_nilai = :id_nilai";
         $this->db->query($query);

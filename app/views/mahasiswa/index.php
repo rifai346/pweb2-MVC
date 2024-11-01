@@ -24,7 +24,7 @@ $users = $userModel->getAllMahasiswa();
             <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/manajemen-nilai-mahasiswa/dashboard">Dashboard</a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/manajemen-nilai-mahasiswa/mahasiswa">Data Mahasiswa</a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/manajemen-nilai-mahasiswa/matakuliah">Data Matakuliah</a>
-                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="">Data Nilai</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/manajemen-nilai-mahasiswa/nilaiujian">Data Nilai</a>
             </div>
         </div>
 

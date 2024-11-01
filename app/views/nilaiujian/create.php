@@ -11,31 +11,35 @@
 <body>
     <div class="container mt-5">
         <h1 class="mb-4">Tambah Nilai Ujian Matakuliah</h1>
-        <form action="../nilaiujian" method="POST" class="form">
+        <form action="../nilaiujian/create" method="POST" class="form">
             <div class="form-group">
                 <label for="nilai_matkul">NILAI MATKUL:</label>
                 <input type="text" class="form-control" id="nilai_matkul" name="nilai_matkul" required>
             </div>
-            <form name="form1" id="form1" action="/action_page.php">
-                ID MATAKULIAH: 
-            <br>
-                <select class="form-select" aria-label="Default select example">
+            <div class="form-group">
+                <label for="id_matakuliah">ID MATAKULIAH:</label>
+                <select class="form-select" id="id_matakuliah" name="id_matakuliah" required>
                     <option selected>Silahkan Pilih ID Matakuliah</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    <?php foreach ($matakuliahList as $matakuliah): ?>
+                        <option value="<?= $matakuliah['id_matakuliah']; ?>">
+                            <?= $matakuliah['id_matakuliah']; ?> 
+                        </option>
+                    <?php endforeach; ?>
                 </select>
-            <br>
-            <form name="form1" id="form1" action="/action_page.php">
-                NIM: 
-                <br>
-                <select class="form-select" aria-label="Default select example">
+            </div>
+
+            <!-- Pilihan NIM Mahasiswa -->
+            <div class="form-group">
+                <label for="nim">NIM:</label>
+                <select class="form-select" id="nim" name="nim" required>
                     <option selected>Silahkan Pilih NIM Mahasiswa</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    <?php foreach ($mahasiswaList as $mahasiswa): ?>
+                        <option value="<?= $mahasiswa['nim']; ?>">
+                            <?= $mahasiswa['nim']; ?> 
+                        </option>
+                    <?php endforeach; ?>
                 </select>
-                <br><br>
+            </div>
             <button type="submit" class="btn btn-primary">Simpan</button>
             <a href="../nilaiujian" class="btn btn-secondary ml-2">Kembali ke Daftar Nilai Ujian Matakuliah</a>
         </form>
