@@ -1,5 +1,5 @@
 <?php
-require_once '../../models/NilaiUjianModel.php';
+require_once '/../../models/NilaiUjianModel.php';
 
 $nilaimodel = new nilaiUjian();
 $nilaiujians = $nilaimodel->getAllNilai();
