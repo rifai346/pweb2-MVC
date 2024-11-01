@@ -25,7 +25,7 @@ class UserController {
     public function edit($nim) {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $this->userModel->update($_POST);
-            header('Location: app/views/mahasiswa/index');
+            header('Location: ../index');
             exit;
         }
         $mahasiswa = $this->userModel->getById($nim);
@@ -39,12 +39,12 @@ class UserController {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           
             $this->userModel->update($_POST);
-            header('Location: app/views/mahasiswa/index');
+            header('Location: ../index');
             exit;
         }
         $mahasiswa = $this->userModel->getById($nim);
         if (!$mahasiswa) {
-            header('Location: app/views/mahasiswa/index'); // Atau tampilkan pesan error
+            header('Location: ../index'); // Atau tampilkan pesan error
             exit;
         }
     }
