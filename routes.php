@@ -94,8 +94,8 @@ if ($parts[0] === 'manajemen-nilai-mahasiswa') {
                 break;
 
                 case 'nilaiujian':
-                    if (isset($parts[3])) {
-                        switch ($parts[3]) {
+                    if (isset($parts[2])) {
+                        switch ($parts[2]) {
                             case 'create':
                                 $controller3->create();
                                 break;

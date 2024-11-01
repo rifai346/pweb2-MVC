@@ -27,6 +27,10 @@ class nilaiController {
         }
         $mahasiswa = $this->usermodel->getAllMahasiswa();
         $matakuliahmodel = $this->matakuliahmodel->getAll();
+
+        $matakuliahList = $this->nilaimodel->getAllMatakuliah();
+        $mahasiswaList = $this->nilaimodel->getAllMahasiswa();
+
         
         require '../app/views/nilaiujian/create.php';
     }
@@ -43,6 +47,10 @@ class nilaiController {
             header('Location: app/views/nilaiujian/index'); // Atau tampilkan pesan error
             exit;
         }
+
+        $matakuliahList = $this->nilaimodel->getAllMatakuliah();
+        $mahasiswaList = $this->nilaimodel->getAllMahasiswa();
+
         require '../app/views/nilaiujian/edit.php';
     }
     public function update($id) {
