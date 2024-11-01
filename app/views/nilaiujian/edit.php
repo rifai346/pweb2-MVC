@@ -10,7 +10,7 @@
 <body>
     <div class="container mt-5">
         <h1 class="mb-4">Edit Nilai Ujian</h1>
-        <form action="/manajemen-nilai-mahasiswa/nilaiujian/update" method="POST" class="form">
+        <form action="/manajemen-nilai-mahasiswa/nilaiujian/update/<?php echo $nilaiujian['id_nilai']; ?>" method="POST" class="form">
             <div class="form-group">
                 <label for="nilai_matkul">NILAI MATKUL:</label>
                 <input type="text" class="form-control" id="nila_matkul" name="nilai_matkul" value="<?php echo $nilaiujian['nilai_matkul']; ?>" required>
